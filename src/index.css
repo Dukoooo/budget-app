@@ -15,10 +15,15 @@ body {
 :root {
   --maxWidth: clamp(320px, 100vw, 1480px);
   --color-main: #b743ff;
+  --color-main-sub: #9b23e7b7;
 }
 
 .logo {
   position: absolute;
   left: 4%;
   top: 5%;
+}
+
+.error__message {
+  color: #9d00ffb7;
 }

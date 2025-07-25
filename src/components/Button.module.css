@@ -1,0 +1,17 @@
+.btn {
+  border: 1px solid rgba(250, 128, 114, 0.276);
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: 15rem;
+  background-color: var(--color-main);
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 2rem;
+}
+.btn:active,
+.btn:focus,
+.btn:hover {
+  background-color: var(--color-main-sub);
+}
