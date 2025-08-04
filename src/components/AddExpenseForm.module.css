@@ -1,0 +1,8 @@
+.add__form_container {
+}
+
+.add__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

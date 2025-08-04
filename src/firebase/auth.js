@@ -1,10 +1,15 @@
+// importing auth from my firebase.js in order to manage auth
 import { auth } from "./firebase";
+
+//importing function from library in order to handle authentication
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+
+// down bellow --> my own functions to handle authentication
 
 export async function doCreateUserWithEmailAndPassword(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
