@@ -3,7 +3,6 @@ import useExpenses from "../hooks/useExpenses.js";
 
 function ExpenseList() {
   const { expenses, isLoading, error, deleteExpense } = useExpenses();
-  console.log(expenses);
   if (expenses.length === 0) return <p>No expense there yet...</p>;
 
   return (

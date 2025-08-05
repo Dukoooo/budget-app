@@ -27,3 +27,20 @@ body {
 .error__message {
   color: #9d00ffb7;
 }
+
+.close__btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  z-index: 10;
+}
+
+.close__btn:hover {
+  color: #ff4d4f;
+  transform: scale(1.2);
+}

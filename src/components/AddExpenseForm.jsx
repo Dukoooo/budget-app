@@ -1,6 +1,7 @@
 import styles from "./AddExpenseForm.module.css";
 import useExpenses from "../hooks/useExpenses";
 import { useState } from "react";
+import Button from "../components/Button";
 function AddExpenseForm({ onClose }) {
   const { addExpense } = useExpenses();
 
@@ -11,6 +12,14 @@ function AddExpenseForm({ onClose }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const textOnlyRegex = /^[A-Za-z\s\']+$/;
+
+    if (!textOnlyRegex.test(expText)) {
+      alert(
+        "Expense name must contain only letters without spaces, numbers, or symbols."
+      );
+      return;
+    }
 
     const newExpense = {
       expText,
@@ -24,12 +33,19 @@ function AddExpenseForm({ onClose }) {
     setExpCategory("");
     setExpValue("");
     setExpStatus("");
+    onClose();
   }
   return (
     <div className={styles.add__form_container}>
       <form className={styles.add__form} onSubmit={handleSubmit}>
-        <h3>Add new expense</h3>
-        <label htmlFor="exp__text">What's the expense?</label>
+        <h3 className={styles.add__from_title}>Add new expense</h3>
+        <button className="close__btn" onClick={() => onClose()}>
+          {" "}
+          ❌
+        </button>
+        <label htmlFor="exp__text" className={styles.add__label}>
+          What's the expense?
+        </label>
         <input
           type="text"
           id="exp__text"
@@ -37,12 +53,17 @@ function AddExpenseForm({ onClose }) {
           required
           value={expText}
           onChange={(e) => setExpText(e.target.value)}
+          className={styles.add__input}
         />
-        <label htmlFor="exp__category">Which category of the expense?</label>
+        <label htmlFor="exp__category" className={styles.add__label}>
+          Which category of the expense?
+        </label>
         <select
           id="exp__category"
           value={expCategory}
           onChange={(e) => setExpCategory(e.target.value)}
+          className={styles.add__input}
+          required
         >
           <option value="">-- Select category --</option>
           <option value="home">Home</option>
@@ -51,7 +72,9 @@ function AddExpenseForm({ onClose }) {
           <option value="vehicle">Vehicle</option>
           <option value="fee">Fee</option>
         </select>
-        <label htmlFor="exp__value">Value of the expense?</label>
+        <label htmlFor="exp__value" className={styles.add__label}>
+          Value of the expense?
+        </label>
         <input
           type="number"
           id="exp__value"
@@ -59,19 +82,24 @@ function AddExpenseForm({ onClose }) {
           value={expValue}
           onChange={(e) => setExpValue(e.target.value)}
           required
+          className={styles.add__input}
         />
-        <label htmlFor="exp__status">Status of the expense?</label>
+        <label htmlFor="exp__status" className={styles.add__label}>
+          Status of the expense?
+        </label>
         <select
           id="exp__status"
           value={expStatus}
           onChange={(e) => setExpStatus(e.target.value)}
+          className={styles.add__input}
+          required
         >
           <option value="">-- Select status --</option>
           <option value="monthly">Monthly</option>
           <option value="one-time">One-time</option>
           <option value="annual">Annual</option>
         </select>
-        <button type="submit">Sumbit</button>
+        <Button type="submit">Sumbit</Button>
       </form>
     </div>
   );
