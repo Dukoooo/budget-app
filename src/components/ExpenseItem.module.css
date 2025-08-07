@@ -1,14 +1,23 @@
 .dash__exp_item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25% 15% 20% 20% 15%;
+  align-items: center;
   background-color: #eef1f4;
   padding: 1rem;
   border-radius: 8px;
-  align-items: center;
+  gap: 1rem;
+  text-align: left;
 }
+
 .dash__exp_text {
   font-weight: bold;
   color: #333;
+}
+
+.dash__exp_category {
+  color: #555;
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }
 
 .dash__exp_amount {
@@ -23,4 +32,13 @@
   border-radius: 12px;
   font-size: 0.75rem;
   text-transform: capitalize;
+  text-align: center;
+}
+
+.dash__exp_btn {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: #dc3545;
+  cursor: pointer;
 }

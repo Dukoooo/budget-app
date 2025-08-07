@@ -2,7 +2,7 @@ import styles from "./AddExpenseForm.module.css";
 import useExpenses from "../hooks/useExpenses";
 import { useState } from "react";
 import Button from "../components/Button";
-function AddExpenseForm({ onClose }) {
+function AddExpenseForm({ onHandleModal }) {
   const { addExpense } = useExpenses();
 
   const [expText, setExpText] = useState("");
@@ -33,13 +33,13 @@ function AddExpenseForm({ onClose }) {
     setExpCategory("");
     setExpValue("");
     setExpStatus("");
-    onClose();
+    onHandleModal(false);
   }
   return (
     <div className={styles.add__form_container}>
       <form className={styles.add__form} onSubmit={handleSubmit}>
         <h3 className={styles.add__from_title}>Add new expense</h3>
-        <button className="close__btn" onClick={() => onClose()}>
+        <button className="close__btn" onClick={() => onHandleModal(false)}>
           {" "}
           ❌
         </button>

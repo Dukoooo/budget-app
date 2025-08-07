@@ -1,18 +1,21 @@
 import styles from "./Dashboard.module.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+import useExpenses from "../hooks/useExpenses";
 
 import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/authContext/AuthContext";
 import ExpenseList from "../components/ExpenseList";
 import AddExpenseForm from "../components/AddExpenseForm";
+import Footer from "../components/Footer";
 
 function Dashboard() {
   const { currentUser } = useAuth();
   const [isAddExpOpen, setIsAddExpOpen] = useState(false);
+  const { expensesSum } = useExpenses();
 
-  function handleCloseModal() {
-    setIsAddExpOpen(false);
+  function handleModal(decision) {
+    setIsAddExpOpen(decision);
   }
 
   async function handleSignOut() {
@@ -46,19 +49,16 @@ function Dashboard() {
           </div>
           <div className={styles.dash__sum}>
             <span className={styles.dash__sum_title}>Expenses</span>
-            <p className={styles.dash__sum_num}>2500$</p>
+            <p className={styles.dash__sum_num}>{expensesSum}</p>
           </div>
           <div className={styles.dash__sum}>
             <span className={styles.dash__sum_title}>Balance</span>
             <p className={styles.dash__sum_num}>2500$</p>
           </div>
         </div>
-        {isAddExpOpen && <AddExpenseForm onClose={handleCloseModal}  />}
+        {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}
         <ExpenseList />
-        <footer className={styles.dash__buttons}>
-          <button onClick={() => setIsAddExpOpen(true)}>Add new exp +</button>
-          <button>Add new income +</button>
-        </footer>
+        <Footer onHandleModal={handleModal} />
       </main>
     </div>
   );

@@ -9,7 +9,7 @@ function ExpenseItem({ onDelete, exp }) {
       <span className={styles.dash__exp_status}>
         {exp.expStatus || "one-time expense"}
       </span>
-      <button onClick={() => onDelete(exp.id)}>❌</button>
+      <button onClick={() => onDelete(exp.id)} className={styles.dash__exp_btn}>❌</button>
     </div>
   );
 }

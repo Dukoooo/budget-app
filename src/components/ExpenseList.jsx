@@ -11,8 +11,8 @@ function ExpenseList() {
       {isLoading && <p>Loading...</p>}
       {error && <p>Error load expenses...</p>}
 
-      {expenses.map((exp) => (
-        <ExpenseItem exp={exp} onDelete={deleteExpense} />
+      {expenses.map((exp, index) => (
+        <ExpenseItem exp={exp} onDelete={deleteExpense} key={index} />
       ))}
     </div>
   );

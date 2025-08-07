@@ -16,6 +16,7 @@ body {
   --maxWidth: clamp(320px, 100vw, 1480px);
   --color-main: #b743ff;
   --color-main-sub: #9b23e7b7;
+  --color-main-sub2: #9c23e717;
 }
 
 .logo {

@@ -13,6 +13,7 @@ import {
 function useExpenses() {
   const { currentUser } = useAuth();
   const [expenses, setExpenses] = useState([]);
+  const [expensesSum, setExpensesSum] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -42,6 +43,21 @@ function useExpenses() {
     );
     return () => unsubscribe();
   }, [currentUser]);
+
+  // Summ of expensesValue
+  useEffect(() => {
+    if (!expenses) {
+      setExpensesSum(0);
+      return;
+    }
+
+    const total = expenses.reduce((acc, expense) => {
+      const value = Number(expense.expValue);
+      return acc + (isNaN(value) ? 0 : value);
+    }, 0);
+
+    setExpensesSum(total);
+  }, [expenses]);
 
   // adding
   async function addExpense(expData) {
@@ -79,6 +95,7 @@ function useExpenses() {
 
   return {
     expenses,
+    expensesSum,
     isLoading,
     error,
     addExpense,

@@ -1,0 +1,14 @@
+.dash__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.dash__buttons button {
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.dash__buttons button:hover {
+  background-color: var(--color-main-sub);
+}
