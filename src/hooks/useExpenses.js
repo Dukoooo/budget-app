@@ -44,7 +44,7 @@ function useExpenses() {
     return () => unsubscribe();
   }, [currentUser]);
 
-  // Summ of expensesValue
+  // Sum of expensesValue
   useEffect(() => {
     if (!expenses) {
       setExpensesSum(0);

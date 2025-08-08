@@ -37,7 +37,7 @@ function Dashboard() {
           </p>
         </aside>
 
-        <button type="submit" onClick={handleSignOut}>
+        <button type="submit" onClick={handleSignOut} className={styles.dash__logOut_btn}>
           Log out
         </button>
       </header>
@@ -49,7 +49,7 @@ function Dashboard() {
           </div>
           <div className={styles.dash__sum}>
             <span className={styles.dash__sum_title}>Expenses</span>
-            <p className={styles.dash__sum_num}>{expensesSum}</p>
+            <p className={styles.dash__sum_num}>{expensesSum} €</p>
           </div>
           <div className={styles.dash__sum}>
             <span className={styles.dash__sum_title}>Balance</span>

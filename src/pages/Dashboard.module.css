@@ -58,4 +58,20 @@
   font-weight: bold;
   color: #222;
 }
+.dash__logOut_btn {
+ cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+  border: 1px solid var(--color-main-sub);
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: var(--color-main);
+  transition: all 0.2s ease;
+}
 
+.dash__logOut_btn:hover,
+.dash__logOut_btn:active {
+  background-color: var(--color-main-sub);
+  scale: 1.04;
+  box-shadow: 0 0 0.35rem var(--color-main-sub);
+}
