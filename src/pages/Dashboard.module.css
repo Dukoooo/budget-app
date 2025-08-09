@@ -37,27 +37,7 @@
   flex-wrap: wrap;
 }
 
-.dash__sum {
-  flex: 1 1 30%;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
 
-.dash__sum_title {
-  font-size: 1rem;
-  color: #888;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.dash__sum_num {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #222;
-}
 .dash__logOut_btn {
  cursor: pointer;
   color: #fff;

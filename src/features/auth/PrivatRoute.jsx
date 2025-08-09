@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../contexts/authContext/AuthContext";
+import { useAuth } from "../../contexts/authContext/AuthContext";
 
 export default function PrivateRoute({ children }) {
   const { userLoggedIn, loading } = useAuth();

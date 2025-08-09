@@ -7,11 +7,11 @@
   border-radius: 8px;
   gap: 1rem;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 .dash__exp_item:hover,
 .dash__exp_item:active {
-  scale: 1.03;
+  scale: 1.02;
   box-shadow: 0 0 0.35rem #412c433b;
 }
 .dash__exp_text {

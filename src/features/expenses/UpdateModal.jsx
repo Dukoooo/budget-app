@@ -1,7 +1,7 @@
 import styles from "./UpdateModal.module.css";
-import Button from "./Button";
+import Button from "../../components/IU/Button";
 import { useState } from "react";
-import useExpenses from "../hooks/useExpenses";
+import useExpenses from "../../hooks/useExpenses";
 
 function UpdateModal({ exp, onCloseModal }) {
   const { expCategory, expStatus, expText, expValue, id } = exp;

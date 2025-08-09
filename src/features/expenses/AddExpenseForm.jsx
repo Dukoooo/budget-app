@@ -1,7 +1,7 @@
 import styles from "./AddExpenseForm.module.css";
-import useExpenses from "../hooks/useExpenses";
+import useExpenses from "../../hooks/useExpenses";
 import { useState } from "react";
-import Button from "../components/Button";
+import Button from "../../components/IU/Button";
 function AddExpenseForm({ onHandleModal }) {
   const { addExpense } = useExpenses();
 

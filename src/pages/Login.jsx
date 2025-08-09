@@ -7,7 +7,7 @@ import styles from "./Login.module.css";
 import logo from "../assets/logo.png";
 import handImg from "../assets/login_hand.png";
 import cirlceImg from "../assets/login_circle.png";
-import Button from "../components/Button";
+import Button from "../components/IU/Button";
 
 function Login() {
   // tu si zavolam a destrukturururujem funkcie z useAuth hooku

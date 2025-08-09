@@ -5,9 +5,10 @@ import useExpenses from "../hooks/useExpenses";
 
 import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/authContext/AuthContext";
-import ExpenseList from "../components/ExpenseList";
-import AddExpenseForm from "../components/AddExpenseForm";
-import Footer from "../components/Footer";
+import ExpenseList from "../features/expenses/ExpenseList";
+import AddExpenseForm from "../features/expenses/AddExpenseForm";
+import Footer from "../components/IU/Footer";
+import DisplayData from "../components/IU/DisplayData";
 
 function Dashboard() {
   const { currentUser } = useAuth();
@@ -37,24 +38,19 @@ function Dashboard() {
           </p>
         </aside>
 
-        <button type="submit" onClick={handleSignOut} className={styles.dash__logOut_btn}>
+        <button
+          type="submit"
+          onClick={handleSignOut}
+          className={styles.dash__logOut_btn}
+        >
           Log out
         </button>
       </header>
       <main className={styles.dash__main}>
         <div className={styles.dash__sum_container}>
-          <div className={styles.dash__sum}>
-            <span className={styles.dash__sum_title}>income</span>
-            <p className={styles.dash__sum_num}>2500$</p>
-          </div>
-          <div className={styles.dash__sum}>
-            <span className={styles.dash__sum_title}>Expenses</span>
-            <p className={styles.dash__sum_num}>{expensesSum} €</p>
-          </div>
-          <div className={styles.dash__sum}>
-            <span className={styles.dash__sum_title}>Balance</span>
-            <p className={styles.dash__sum_num}>2500$</p>
-          </div>
+          <DisplayData data={expensesSum} title={"income"} />
+          <DisplayData data={expensesSum} title={"expenses"} />
+          <DisplayData data={expensesSum} title={"balance"} />
         </div>
         {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}
         <ExpenseList />

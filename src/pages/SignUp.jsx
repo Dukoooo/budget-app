@@ -9,7 +9,7 @@ import { db } from "../firebase/firebase";
 import logo from "../assets/logo.png";
 import handImg from "../assets/login_hand.png";
 import cirlceImg from "../assets/login_circle.png";
-import Button from "../components/Button";
+import Button from "../components/IU/Button";
 
 function SignUp() {
   const { userLoggedIn } = useAuth();

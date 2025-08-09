@@ -1,5 +1,3 @@
-// src/utils/firebaseErrorMessages.js
-
 export function getFirebaseErrorMessage(errorCode) {
   switch (errorCode) {
     case "auth/invalid-credential":

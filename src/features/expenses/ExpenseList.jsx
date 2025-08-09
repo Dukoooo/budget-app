@@ -1,5 +1,5 @@
 import styles from "./ExpenseList.module.css";
-import useExpenses from "../hooks/useExpenses.js";
+import useExpenses from "../../hooks/useExpenses.js";
 import ExpenseItem from "./ExpenseItem.jsx";
 
 function ExpenseList() {
