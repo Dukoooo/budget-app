@@ -17,7 +17,6 @@ function useExpenses() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // fetch expenses in real-time
   useEffect(() => {
     if (!currentUser?.uid) {
       setExpenses([]);

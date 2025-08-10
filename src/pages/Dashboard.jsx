@@ -1,22 +1,28 @@
 import styles from "./Dashboard.module.css";
+import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
-import useExpenses from "../hooks/useExpenses";
-
-import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/authContext/AuthContext";
+import useExpenses from "../hooks/useExpenses";
+import useIncome from "../hooks/useIncome";
 import ExpenseList from "../features/expenses/ExpenseList";
 import AddExpenseForm from "../features/expenses/AddExpenseForm";
 import Footer from "../components/IU/Footer";
 import DisplayData from "../components/IU/DisplayData";
+import AddIncomeForm from "../features/incomes/addIncomeForm";
 
 function Dashboard() {
   const { currentUser } = useAuth();
   const [isAddExpOpen, setIsAddExpOpen] = useState(false);
+  const [isAddIncomeOpen, setIsIncomeOpen] = useState(false);
   const { expensesSum } = useExpenses();
-
+  const { currentIncomeValue } = useIncome();
   function handleModal(decision) {
     setIsAddExpOpen(decision);
+  }
+
+  function handleAddIncome(decision) {
+    setIsIncomeOpen(decision);
   }
 
   async function handleSignOut() {
@@ -48,13 +54,14 @@ function Dashboard() {
       </header>
       <main className={styles.dash__main}>
         <div className={styles.dash__sum_container}>
-          <DisplayData data={expensesSum} title={"income"} />
+          <DisplayData data={currentIncomeValue} title={"income"} />
           <DisplayData data={expensesSum} title={"expenses"} />
           <DisplayData data={expensesSum} title={"balance"} />
         </div>
         {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}
+        {isAddIncomeOpen && <AddIncomeForm onHandleModal={handleAddIncome} />}
         <ExpenseList />
-        <Footer onHandleModal={handleModal} />
+        <Footer onHandleModal={handleModal} onHanldeIncome={handleAddIncome} />
       </main>
     </div>
   );

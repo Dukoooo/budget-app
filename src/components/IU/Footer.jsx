@@ -1,11 +1,11 @@
 import Button from "./Button";
 import styles from "./Footer.module.css";
 
-function Footer({ onHandleModal }) {
+function Footer({ onHandleModal, onHanldeIncome }) {
   return (
     <footer className={styles.dash__buttons}>
       <Button onClick={() => onHandleModal(true)}>Add new exp +</Button>
-      <Button>Add new income +</Button>
+      <Button onClick={() => onHanldeIncome(true)}>Add new income +</Button>
     </footer>
   );
 }
