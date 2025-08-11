@@ -17,6 +17,13 @@ function Dashboard() {
   const [isAddIncomeOpen, setIsIncomeOpen] = useState(false);
   const { expensesSum } = useExpenses();
   const { currentIncomeValue } = useIncome();
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    setBalance(Number(currentIncomeValue) - Number(expensesSum));
+  }, [currentIncomeValue, expensesSum]);
+
+  
   function handleModal(decision) {
     setIsAddExpOpen(decision);
   }
@@ -56,7 +63,7 @@ function Dashboard() {
         <div className={styles.dash__sum_container}>
           <DisplayData data={currentIncomeValue} title={"income"} />
           <DisplayData data={expensesSum} title={"expenses"} />
-          <DisplayData data={expensesSum} title={"balance"} />
+          <DisplayData data={balance} title={"balance"} />
         </div>
         {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}
         {isAddIncomeOpen && <AddIncomeForm onHandleModal={handleAddIncome} />}
