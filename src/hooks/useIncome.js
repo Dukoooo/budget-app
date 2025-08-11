@@ -79,6 +79,7 @@ function useIncome() {
         dateClosed: new Date(),
       });
 
+    
       // DELETE ALL DATA
       const batch = writeBatch(db);
       expensesSnap.forEach((doc) => batch.delete(doc.ref));
