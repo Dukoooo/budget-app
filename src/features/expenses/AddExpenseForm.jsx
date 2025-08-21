@@ -65,7 +65,9 @@ function AddExpenseForm({ onHandleModal }) {
           className={styles.add__input}
           required
         >
-          <option value="">-- Select category --</option>
+          <option value="" selected>
+            -- Select category --
+          </option>
           <option value="home">Home</option>
           <option value="food">Food</option>
           <option value="hobby">Hobby</option>
