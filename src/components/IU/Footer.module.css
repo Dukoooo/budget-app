@@ -15,3 +15,12 @@
   scale: 1.04;
   box-shadow: 0 0 0.35rem var(--color-main-sub);
 }
+
+@media screen and (max-width: 450px) {
+  .dash__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}

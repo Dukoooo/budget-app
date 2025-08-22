@@ -1,4 +1,5 @@
 import styles from "./Dashboard.module.css";
+import displayStyles from "../components/IU/DisplayData.module.css";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
@@ -13,6 +14,7 @@ import DisplayData from "../components/IU/DisplayData";
 import AddIncomeForm from "../features/incomes/addIncomeForm";
 import Loader from "../components/IU/Loader";
 import FilterData from "../components/IU/FilterData";
+import Header from "../components/layout/Header";
 
 function Dashboard() {
   const { currentUser, loading: loadingUser } = useAuth();
@@ -71,30 +73,19 @@ function Dashboard() {
     <>
       {isLoading && <Loader />}
       <div className={styles.dash__container}>
-        <header className={styles.dash__header}>
-          <aside className={styles.dash__header_info}>
-            <h1 className={styles.dash__title}>
-              Hello {currentUser?.name || "User"},
-            </h1>
-            <p className={styles.dash__sub_title}>
-              summary of your financial status
-            </p>
-          </aside>
-
-          <button
-            type="submit"
-            onClick={handleSignOut}
-            className={styles.dash__logOut_btn}
-          >
-            Log out
-          </button>
-        </header>
+        <Header currentUser={currentUser} onSignOut={handleSignOut} />
         <main className={styles.dash__main}>
           <div className={styles.dash__sum_container}>
             <DisplayData data={currentIncomeValue} title={"income"} />
             <DisplayData data={expensesSum} title={"expenses"} />
             <DisplayData data={balance} title={"balance"} />
-            {savings && <DisplayData data={savings} title={"savings"} />}
+            {savings && (
+              <DisplayData
+                data={savings}
+                title={"savings"}
+                className={displayStyles.dash__sum_savings}
+              />
+            )}
           </div>
 
           {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}

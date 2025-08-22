@@ -3,8 +3,13 @@
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #eef1f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dash__sum_title {
@@ -18,4 +23,25 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #222;
+}
+
+.dash__sum_savings {
+  background: #108a105d;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 40%;
+}
+
+@media screen and (max-width: 850px) {
+  .dash__sum,
+  .dash__sum_savings {
+    flex: 1;
+    max-width: 100%;
+  }
 }
