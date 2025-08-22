@@ -22,7 +22,7 @@ export function doSignOut() {
 export async function doSignInWithEmailAndPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
-
-export function doPasswordReset(email) {
-  return sendPasswordResetEmail(auth, email);
-}
+// not using yet
+// export function doPasswordReset(email) {
+//   return sendPasswordResetEmail(auth, email);
+// }

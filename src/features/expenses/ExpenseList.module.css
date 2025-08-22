@@ -3,3 +3,8 @@
   flex-direction: column;
   gap: 0.8rem;
 }
+
+.no_expenses {
+  font-weight: 900;
+  margin: 4rem auto;
+}

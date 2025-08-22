@@ -1,34 +1,33 @@
 export function getFirebaseErrorMessage(errorCode) {
   switch (errorCode) {
     case "auth/invalid-credential":
-      return "Nesprávne prihlasovacie údaje!";
+      return "Invalid credentials!";
     case "auth/missing-password":
-      return "Zadajte heslo.";
-
+      return "Please enter a password.";
     case "auth/missing-email":
-      return "Zadajte email.";
+      return "Please enter an email.";
     case "auth/invalid-email":
-      return "Zadaj platný e-mail.";
+      return "Please enter a valid email.";
     case "auth/user-not-found":
-      return "Používateľ s týmto e-mailom neexistuje.";
+      return "No user found with this email.";
     case "auth/wrong-password":
-      return "Nesprávne heslo.";
+      return "Incorrect password.";
     case "auth/email-already-exists":
     case "auth/email-already-in-use":
-      return "Tento e-mail sa už používa.";
+      return "This email is already in use.";
     case "auth/too-many-requests":
-      return "Príliš veľa pokusov. Skús to neskôr.";
+      return "Too many attempts. Try again later.";
     case "auth/weak-password":
-      return "Heslo musí mať aspoň 6 znakov.";
+      return "Password must be at least 6 characters long.";
     case "auth/invalid-password":
-      return "Neplatné heslo.";
+      return "Invalid password.";
     case "auth/internal-error":
-      return "Interná chyba servera. Skús to neskôr.";
+      return "Internal server error. Try again later.";
     case "auth/network-request-failed":
-      return "Skontroluj pripojenie na internet.";
+      return "Check your internet connection.";
     case "auth/operation-not-allowed":
-      return "Táto možnosť nie je povolená. Skontroluj Firebase nastavenia.";
+      return "This operation is not allowed. Check Firebase settings.";
     default:
-      return "Neznáma chyba. Skús to znova.";
+      return "Unknown error. Please try again.";
   }
 }

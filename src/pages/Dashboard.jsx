@@ -79,13 +79,11 @@ function Dashboard() {
             <DisplayData data={currentIncomeValue} title={"income"} />
             <DisplayData data={expensesSum} title={"expenses"} />
             <DisplayData data={balance} title={"balance"} />
-            {savings && (
-              <DisplayData
-                data={savings}
-                title={"savings"}
-                className={displayStyles.dash__sum_savings}
-              />
-            )}
+            <DisplayData
+              data={savings}
+              title={"savings"}
+              className={displayStyles.dash__sum_savings}
+            />
           </div>
 
           {isAddExpOpen && <AddExpenseForm onHandleModal={handleModal} />}

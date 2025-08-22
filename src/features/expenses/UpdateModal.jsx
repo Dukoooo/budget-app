@@ -22,7 +22,7 @@ function UpdateModal({ exp, onCloseModal }) {
 
     if (!textOnlyRegex.test(updatedText)) {
       alert(
-        "Expense name must contain only letters without spaces, numbers, or symbols."
+        "Expense name must contain only letters without numbers or symbols."
       );
       return;
     }
@@ -48,50 +48,56 @@ function UpdateModal({ exp, onCloseModal }) {
         >
           ❌
         </button>
+
         <label htmlFor="updated__text" className={styles.updated__label}>
-          new name?
+          New name?
         </label>
         <input
           type="text"
           id="updated__text"
-          placeholder="Enter the value..."
+          placeholder="Enter expense name..."
           required
           value={updatedText}
           onChange={(e) => setUpdatedText(e.target.value)}
           className={styles.updated__input}
         />
+
         <label htmlFor="updated__category" className={styles.updated__label}>
-          new category?
+          New category?
         </label>
         <select
-          id="exp__category"
+          id="updated__category"
           value={updatedCategory}
           onChange={(e) => setUpdatedCategory(e.target.value)}
           className={styles.updated__input}
           required
         >
           <option value="">-- Select category --</option>
-          <option value="home">Home</option>
-          <option value="food">Food</option>
-          <option value="hobby">Hobby</option>
-          <option value="vehicle">Vehicle</option>
-          <option value="fee">Fee</option>
+          <option value="housing">Housing / Rent</option>
+          <option value="utilities">Utilities</option>
+          <option value="food">Food & Groceries</option>
+          <option value="transport">Transport</option>
+          <option value="health">Health</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="shopping">Shopping</option>
+          <option value="other">Other</option>
         </select>
+
         <label htmlFor="updated__value" className={styles.updated__label}>
-          {" "}
-          new value?
+          New value?
         </label>
         <input
           type="number"
           id="updated__value"
-          placeholder="Enter the value..."
+          placeholder="Enter the amount..."
           value={updatedValue}
           onChange={(e) => setUpdatedValue(e.target.value)}
           required
           className={styles.updated__input}
         />
+
         <label htmlFor="updated__status" className={styles.updated__label}>
-          new status?
+          New status?
         </label>
         <select
           id="updated__status"
@@ -101,11 +107,11 @@ function UpdateModal({ exp, onCloseModal }) {
           required
         >
           <option value="">-- Select status --</option>
-          <option value="monthly">Monthly</option>
+          <option value="recurring">Recurring</option>
           <option value="one-time">One-time</option>
-          <option value="annual">Annual</option>
         </select>
-        <Button type="submit">Sumbit</Button>
+
+        <Button type="submit">Submit</Button>
       </form>
     </div>
   );

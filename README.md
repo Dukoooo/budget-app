@@ -1,12 +1,49 @@
-# React + Vite
+Budget App 💸
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app to keep track of your personal expenses. Add, update, and delete expenses while keeping everything organized and easy to understand.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔐 User authentication: Sign up, log in, log out with Firebase Auth
 
-## Expanding the ESLint configuration
+📝 Add new expenses with name, category, value, and status
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✏️ Update or delete existing expenses
+
+📂 Categories: Housing, Utilities, Food, Transport, Health, Entertainment, Shopping, Other
+
+🔄 Status: Recurring or One-time
+
+🌐 Real-time syncing with Firebase Firestore
+
+⚡ Friendly error messages for login/signup issues
+
+🛠️ Built with:
+⚛️ React
+🌐 Firebase (Auth + Firestore)
+🎨 CSS Modules
+💡 Custom React hooks
+
+---
+
+📦 Installation & Running the App
+
+git clone https://github.com/Dukoooo/budget-app.git
+cd budget-app
+npm install
+npm start
+
+---
+
+📌 Notes
+
+Make sure your Firebase project has Authentication and Firestore set up.
+
+Expenses are saved in Firestore and synced in real time.
+
+Friendly messages appear if login/signup fails or the network is down.
+
+👤 Author
+Created with ❤️ by Juraj Duko Golian
+Check out more of my projects on [GitHub](https://github.com/Dukoooo)  
+or connect with me on [LinkedIn](https://www.linkedin.com/in/juraj-golian-884939220)

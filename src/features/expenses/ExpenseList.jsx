@@ -3,7 +3,7 @@ import ExpenseItem from "./ExpenseItem.jsx";
 
 function ExpenseList({ expenses, isLoading, error, onDelete }) {
   if (!expenses || expenses.length === 0) {
-    return <p>No expense there yet...</p>;
+    return <p className={styles.no_expenses}>No expenses yet 🥺</p>;
   }
 
   return (

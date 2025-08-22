@@ -9,9 +9,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.filter__label {
+label {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 900;
   color: #333;
 }
 
@@ -35,4 +35,17 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  .filter__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .filter__category {
+    display: flex;
+    flex-direction: column;
+  }
 }

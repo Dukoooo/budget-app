@@ -11,13 +11,13 @@ import { db } from "../firebase/firebase";
 
 function useSavings() {
   const { currentUser } = useAuth();
-  const [savings, setSavings] = useState(0);
+  const [savings, setSavings] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  console.log(savings);
+
   useEffect(() => {
     if (!currentUser?.uid) {
-      setSavings(0);
+      setSavings(null);
       return;
     }
 
@@ -53,6 +53,7 @@ function useSavings() {
           },
           { merge: true }
         );
+
         setSavings(totalBalance);
       } catch (err) {
         setError(err);

@@ -10,7 +10,6 @@ import cirlceImg from "../assets/login_circle.png";
 import Button from "../components/IU/Button";
 
 function Login() {
-  // tu si zavolam a destrukturururujem funkcie z useAuth hooku
   const { userLoggedIn } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -18,7 +17,6 @@ function Login() {
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  //submit funkcia... kde zistujem ci status signin existuje a ak nie tak to zmenim a volam funkciu prihlasenia s emailom a klucom
   async function onSubmit(e) {
     e.preventDefault();
     if (!isSigningIn) {
